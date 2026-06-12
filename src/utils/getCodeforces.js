@@ -20,7 +20,7 @@ async function getCodeforces() {
       submissionLink: `https://codeforces.com/contest/${submission.contestId}/submission/${submission.id}`,
       difficulty: submission.problem.rating ?? null,
       platform: "Codeforces",
-      topics: submission.problem.tags ?? [],
+      topics: (submission.problem.tags ?? []).join(", "),
     }));
 }
 
