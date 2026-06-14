@@ -80,9 +80,9 @@ async function getLeetCode() {
                 .difficulty,
             platform: "LeetCode",
             topics:
-            details.data.question.topicTags
-                .map(tag => tag.name)
-                .join(", ")
+            details.data.question.topicTags.map(
+                tag => tag.name
+            )
         };
         })
     );
