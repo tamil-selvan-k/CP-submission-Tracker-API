@@ -13,7 +13,7 @@ async function getAtCoder() {
         )
         .map((submission) => ({
             timestamp: submission.epoch_second,
-            date: new Date(submission.epoch_second * 1000).toISOString(),
+            date: new Date(submission.epoch_second * 1000).toISOString().split("T")[0],
             problemName: submission.problem_id,
             submissionLink: `https://atcoder.jp/contests/${submission.contest_id}/submissions/${submission.id}`,
             difficulty: null,

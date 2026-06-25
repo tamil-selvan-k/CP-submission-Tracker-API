@@ -71,7 +71,7 @@ async function getLeetCode() {
             Number(
                 submission.timestamp
             ) * 1000
-            ).toISOString(),
+            ).toISOString().split("T")[0],
             problemName:
             submission.title,
             submissionLink: `https://leetcode.com/problems/${submission.titleSlug}`,
