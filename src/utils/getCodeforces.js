@@ -15,7 +15,7 @@ async function getCodeforces() {
     )
     .map((submission) => ({
       timestamp: submission.creationTimeSeconds,
-      date: new Date(submission.creationTimeSeconds * 1000).toISOString(),
+      date: new Date(submission.creationTimeSeconds * 1000).toISOString().split("T")[0],
       problemName: submission.problem.name,
       submissionLink: `https://codeforces.com/contest/${submission.contestId}/submission/${submission.id}`,
       difficulty: submission.problem.rating ?? null,
