@@ -1,22 +1,13 @@
-on: 
-  push:
-    branches:
-      - main
-
-jobs:
-  name: Deploy to Render
-  runs-on: ubuntu-latest
-  steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '18'
-
-    - name: Install dependencies
-      run: npm install
-
-    - name: Deploy
-      
+name: learn-github-workflows
+run-name: ${{ github.actor }} is learning github actions
+on: [push]
+jobs: 
+  check-bats-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v4
+        with: 
+          node-version: 20
+      - run: npm install -g bats
+      - run: bats -v
